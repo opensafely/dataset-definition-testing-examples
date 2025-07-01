@@ -1,13 +1,13 @@
 # dataset-definiton-testing-examples
 
-[View on OpenSAFELY](https://jobs.opensafely.org/repo/https%253A%252F%252Fgithub.com%252Fopensafely%252Fdataset-definiton-testing-examples)
+This repository contains reference examples of [the dataset definition testing functionality of ehrQL](https://docs.opensafely.org/ehrql/how-to/test-dataset-definition/). It is updated on an ongoing basis.
 
-Details of the purpose and any published outputs from this project can be found at the link above.
+Each example lives in its own directory, and each directory contains a dataset definition (`dataset_definition.py`) and a test file (`test_dataset_definition.py`). To run the tests for a given example, navigate to its directory in the terminal, then run the `assure` ehrQL command:
 
-The contents of this repository MUST NOT be considered an accurate or valid representation of the study or its purpose. 
-This repository may reflect an incomplete or incorrect analysis with no further ongoing work.
-The content has ONLY been made public to support the OpenSAFELY [open science and transparency principles](https://www.opensafely.org/about/#contributing-to-best-practice-around-open-science) and to support the sharing of re-usable code for other subsequent users.
-No clinical, policy or safety conclusions must be drawn from the contents of this repository.
+```
+cd example-X-name-of-example
+opensafely exec ehrql:v1 assure test_dataset_definition.py
+```
 
 # About the OpenSAFELY framework
 

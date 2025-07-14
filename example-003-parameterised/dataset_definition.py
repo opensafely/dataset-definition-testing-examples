@@ -5,7 +5,8 @@ from ehrql.tables.core import patients, clinical_events, medications
 
 index_date = get_parameter("index_date")
 codelist_path = get_parameter("codelist_path", type=Path)
-codelist = codelist_from_csv(codelist_path)
+codelist = codelist_from_csv(codelist_path, column="code")
+codelist_type = get_parameter("codelist_type")
 
 def make_dataset(index_date, codelist, codelist_type):
     dataset = create_dataset()
@@ -43,3 +44,4 @@ def make_dataset(index_date, codelist, codelist_type):
     
     return dataset
     
+dataset = make_dataset(index_date, codelist, codelist_type)

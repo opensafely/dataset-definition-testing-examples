@@ -6,7 +6,7 @@ test_data = {
     1: {
         "patients": [
             {
-                "date_of_birth": date(1954, 1, 1),
+                "date_of_birth": date(1950, 1, 1),
                 "sex": "female",
             }
         ],
@@ -24,7 +24,7 @@ test_data = {
     2: {
         "patients": [
             {
-                "date_of_birth": date(1974, 1, 1),
+                "date_of_birth": date(1970, 1, 1),
                 "sex": "male",
             }
         ],
@@ -61,7 +61,7 @@ test_data = {
         "patients": [
             {
                 "date_of_birth": date(1932, 1, 1),
-                "date_of_death": date(2023, 1, 1),
+                "date_of_death": date(2019, 1, 1),
                 "sex": "intersex",
             }
         ],

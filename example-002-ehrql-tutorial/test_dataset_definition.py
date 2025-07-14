@@ -28,7 +28,7 @@ test_data = {
             "ace_or_arb": False,
         },
     },
-    # Not expected in population, due to revolved diabetes that unresolved AFTER the index date.
+    # Not expected in population, due to resolved diabetes that unresolved AFTER the index date.
     2: {
         "patients": {"date_of_birth": date(1950, 1, 1), "sex": "female"},
         "medications": [],

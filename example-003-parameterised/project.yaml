@@ -9,7 +9,7 @@ actions:
   generate_dataset:
     run: ehrql:v1 generate-dataset example-003-parameterised/dataset_definition.py --output output/dataset_1.csv.gz
       --
-      --index_date "2020-01-01" --codelist_path "codelists/cake.csv"
+      --index_date "2020-01-01" --codelist_path "codelists/cake.csv" --codelist_type "medications"
     outputs:
       highly_sensitive:
         dataset: output/dataset_1.csv.gz

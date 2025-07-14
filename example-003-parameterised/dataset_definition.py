@@ -1,5 +1,11 @@
-from ehrql import create_dataset, codelist_from_csv, days, show
+from pathlib import Path
+
+from ehrql import create_dataset, get_parameter, codelist_from_csv
 from ehrql.tables.core import patients, clinical_events, medications
+
+index_date = get_parameter("index_date")
+codelist_path = get_parameter("codelist_path", type=Path)
+codelist = codelist_from_csv(codelist_path)
 
 def make_dataset(index_date, codelist, codelist_type):
     dataset = create_dataset()

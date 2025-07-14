@@ -1,0 +1,23 @@
+version: '4.0'
+
+actions:
+  # These two actions do the same thing in two different ways: they take our parameterised dataset definition and supply 
+  # parameters in order to generate a dataset for the index date 2020-01-01 with the cake codelist.
+
+  # This action passes in the parameters at the command line stage, and uses the get_parameters method within the ehrQL
+  # file to extract them. It uses the parameterised dataset definition file directly.
+  generate_dataset:
+    run: ehrql:v1 generate-dataset example-003-parameterised/dataset_definition.py --output output/dataset_1.csv.gz
+      --
+      --index_date "2020-01-01" --codelist_path "codelists/cake.csv"
+    outputs:
+      highly_sensitive:
+        dataset: output/dataset_1.csv.gz
+
+  # This action uses the separate ehrQL file written specifically for the 2020 cake case, where we defined our parameters
+  # in the ehrQL file itself. This method is useful if there's a lot of case-specific logic that we'd want to write within an ehrQL file.
+  generate_dataset:
+    run: ehrql:v1 generate-dataset example-003-parameterised/dataset_definition_2020_cake.py --output output/dataset_2.csv.gz
+    outputs:
+      highly_sensitive:
+        dataset: output/dataset_2.csv.gz

@@ -8,6 +8,7 @@ actions:
   # file to extract them. It uses the parameterised dataset definition file directly.
   generate_dataset:
     run: ehrql:v1 generate-dataset example-003-parameterised/dataset_definition.py --output output/dataset_1.csv.gz
+      --test-data-file example-003-parameterised/test_dataset_definition_2020_cake.py
       --
       --index_date "2020-01-01" --codelist_path "codelists/cake.csv" --codelist_type "medications"
     outputs:
@@ -18,6 +19,7 @@ actions:
   # in the ehrQL file itself. This method is useful if there's a lot of case-specific logic that we'd want to write within an ehrQL file.
   generate_dataset:
     run: ehrql:v1 generate-dataset example-003-parameterised/dataset_definition_2020_cake.py --output output/dataset_2.csv.gz
-    outputs:
+      --
+      --index_date "2020-01-01" --codelist_path "codelists/cake.csv" --codelist_type "medications"outputs:
       highly_sensitive:
         dataset: output/dataset_2.csv.gz
